@@ -1,6 +1,5 @@
 import React from 'react';
 import List from './List';
-import STORE from './Store';
 import './App.css';
 
 function App(props){
@@ -16,13 +15,16 @@ function App(props){
           <h1>Trelloyes!</h1>
         </header>
         <div className='App-list'>
-          {props.STORE.lists.map(list =>
+          {props.store.lists.map(list =>
             <List 
+              key = {list.id}
               header={list.header}
-              cards={list.cardIds.map(id => STORE.allCards[id])}
+              cards={list.cardIds.map(id => props.store.allCards[id])}
             />
             )}
         </div>
       </main>
     )
 }
+
+export default App;

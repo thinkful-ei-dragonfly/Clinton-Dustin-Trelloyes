@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-
+import './List.css';
 
 function List(props){
   
@@ -11,8 +11,9 @@ function List(props){
         <h2>{props.header}</h2>
       </header>
       <div className ="List-cards">
-        {props.cards.map((card) => 
+        {props.cards.map((card, index) => 
           <Card 
+            key={index}
             title={card.title}
             content={card.content}
             />      
@@ -21,3 +22,5 @@ function List(props){
     </section>
   );
 }
+
+export default List;
