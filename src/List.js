@@ -11,7 +11,12 @@ function List(props){
         <h2>{props.header}</h2>
       </header>
       <div className ="List-cards">
-        {cards}
+        {props.cards.map((card) => 
+          <Card 
+            title={card.title}
+            content={card.content}
+            />      
+          )}
       </div>
     </section>
   );
